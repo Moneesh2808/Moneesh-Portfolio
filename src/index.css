@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    @apply antialiased;
+  }
+
+  body {
+    @apply font-['Inter',sans-serif] bg-bg-light dark:bg-bg-dark text-slate-900 dark:text-slate-100 transition-colors duration-300 overflow-x-hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-['Poppins',sans-serif];
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/10 dark:bg-slate-900/40 backdrop-blur-md border border-white/20 dark:border-white/10 rounded-2xl shadow-xl;
+  }
+
+  .text-glow {
+    text-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+  }
+
+  .accent-glow {
+    @apply shadow-[0_0_15px_rgba(34,211,238,0.4)];
+  }
+
+  .btn-primary {
+    @apply px-6 py-3 bg-gradient-to-r from-indigo-600 to-cyan-500 text-white rounded-xl font-semibold shadow-lg hover:shadow-indigo-500/25 transition-all duration-300 hover:scale-105 active:scale-95;
+  }
+
+  .btn-outline {
+    @apply px-6 py-3 border-2 border-indigo-500 text-indigo-500 dark:text-indigo-400 rounded-xl font-semibold hover:bg-indigo-500 hover:text-white transition-all duration-300 hover:scale-105 active:scale-95;
+  }
+}
+
+/* Custom Cursor Glow */
+.cursor-glow {
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  background: radial-gradient(circle 400px at var(--x) var(--y), rgba(99, 102, 241, 0.15), transparent 80%);
+}
+
+.dark .cursor-glow {
+  background: radial-gradient(circle 400px at var(--x) var(--y), rgba(34, 211, 238, 0.1), transparent 80%);
+}
+
+/* Scroll Progress Bar */
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 4px;
+  background: linear-gradient(to right, #6366f1, #22d3ee);
+  z-index: 10000;
+}
+
+/* Section Transitions */
+.section-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.section-reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
