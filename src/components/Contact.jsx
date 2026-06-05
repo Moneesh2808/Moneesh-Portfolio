@@ -11,15 +11,21 @@ const Contact = () => {
     email: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null); // 'success' | 'error' | null
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+    // Clear status when user starts typing again
+    if (submitStatus) setSubmitStatus(null);
   };
 
   const form = useRef();
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus(null);
     
     emailjs.sendForm(
       'service_tgygh8b', 
@@ -27,10 +33,16 @@ const Contact = () => {
       form.current, 
       'f_LGNlAgPzDNA7H8h'
     ).then((result) => {
-        alert('Message sent successfully!');
+        setIsSubmitting(false);
+        setSubmitStatus('success');
         setFormData({ name: '', email: '', message: '' });
+        
+        // Hide success message after 5 seconds
+        setTimeout(() => setSubmitStatus(null), 5000);
     }, (error) => {
-        alert('Failed to send message: ' + error.text);
+        setIsSubmitting(false);
+        setSubmitStatus('error');
+        console.error('EmailJS Error:', error);
     });
   };
 
@@ -182,10 +194,27 @@ const Contact = () => {
 
               <button
                 type="submit"
-                className="btn-primary mt-2 flex items-center justify-center gap-2"
+                disabled={isSubmitting}
+                className="btn-primary mt-2 flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
               >
-                Send Message <HiOutlinePaperAirplane className="rotate-90" />
+                {isSubmitting ? (
+                  <>Sending...</>
+                ) : (
+                  <>Send Message <HiOutlinePaperAirplane className="rotate-90" /></>
+                )}
               </button>
+
+              {submitStatus === 'success' && (
+                <div className="p-4 bg-green-500/10 border border-green-500/20 rounded-xl text-green-600 dark:text-green-400 text-sm text-center font-medium animate-pulse">
+                  Thank you! Your message has been sent successfully. I will get back to you soon.
+                </div>
+              )}
+
+              {submitStatus === 'error' && (
+                <div className="p-4 bg-red-500/10 border border-red-500/20 rounded-xl text-red-600 dark:text-red-400 text-sm text-center font-medium">
+                  Oops! Something went wrong while sending your message. Please try again or email me directly.
+                </div>
+              )}
             </form>
           </motion.div>
         </div>
