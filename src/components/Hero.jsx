@@ -5,6 +5,7 @@ import { personalInfo } from '../data';
 import { HiDownload, HiArrowRight } from 'react-icons/hi';
 import { HiOutlineMail, HiArrowDown } from 'react-icons/hi';
 import { FaReact, FaPython } from 'react-icons/fa';
+import { TypeAnimation } from 'react-type-animation';
 
 const Hero = () => {
   return (
@@ -32,9 +33,22 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="text-5xl md:text-7xl font-bold mb-6 leading-tight"
+              className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight flex flex-wrap justify-center md:justify-start"
             >
-              Hi, I'm <span className="bg-gradient-to-r from-indigo-600 to-cyan-500 bg-clip-text text-transparent">{personalInfo.name}</span>
+              <span className="mr-3">Hi, I'm</span>
+              <span className="bg-gradient-to-r from-indigo-600 to-cyan-500 bg-clip-text text-transparent">
+                <TypeAnimation
+                  sequence={[
+                    personalInfo.name,
+                    1500,
+                    '',
+                    500
+                  ]}
+                  wrapper="span"
+                  speed={50}
+                  repeat={Infinity}
+                />
+              </span>
             </motion.h1>
             
             <motion.p 
@@ -82,9 +96,9 @@ const Hero = () => {
             initial={{ opacity: 0, scale: 0.8, rotate: 10 }}
             animate={{ opacity: 1, scale: 1, rotate: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
-            className="flex-1 relative"
+            className="flex-1 relative mt-12 md:mt-0"
           >
-            <div className="relative w-72 h-72 md:w-96 md:h-96 mx-auto">
+            <div className="relative w-64 h-64 md:w-96 md:h-96 mx-auto">
               {/* Background Glow */}
               <div className="absolute inset-0 bg-gradient-to-tr from-indigo-500/30 to-cyan-500/30 blur-3xl rounded-full" />
               

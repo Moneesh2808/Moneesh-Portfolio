@@ -27,8 +27,8 @@ const About = () => {
             className="glass-card p-8 md:p-12 relative group"
           >
             {/* Decorative Icon */}
-            <div className="absolute -top-6 -left-6 w-12 h-12 bg-indigo-600 rounded-xl flex items-center justify-center text-white shadow-lg shadow-indigo-600/30">
-              <HiOutlineLightBulb size={24} />
+            <div className="absolute -top-4 -left-4 md:-top-6 md:-left-6 w-10 h-10 md:w-12 md:h-12 bg-indigo-600 rounded-xl flex items-center justify-center text-white shadow-lg shadow-indigo-600/30">
+              <HiOutlineLightBulb size={24} className="scale-75 md:scale-100" />
             </div>
             
             <div className="prose prose-lg dark:prose-invert max-w-none">

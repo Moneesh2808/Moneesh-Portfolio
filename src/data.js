@@ -1,5 +1,5 @@
 import { 
-  FaPython, FaJs, FaReact, FaHtml5, FaCss3Alt, FaDatabase, FaGitAlt, FaGithub, FaTerminal, FaRobot, FaBrain, FaSearch, FaFlask, FaCode
+  FaPython, FaJs, FaReact, FaHtml5, FaCss3Alt, FaDatabase, FaGitAlt, FaGithub, FaTerminal, FaRobot, FaBrain, FaSearch, FaFlask, FaCode, FaFileExcel, FaChartBar, FaChartPie, FaTable, FaProjectDiagram, FaChartLine
 } from 'react-icons/fa';
 import { 
   SiDjango, SiMysql, SiPostgresql
@@ -25,14 +25,24 @@ export const skills = [
       { name: "Python", icon: FaPython, color: "#3776AB" },
       { name: "SQL", icon: FaDatabase, color: "#4479A1" },
       { name: "JavaScript", icon: FaJs, color: "#F7DF1E" },
-      { name: "React", icon: FaReact, color: "#61DAFB" }
+      { name: "Reactjs(Basics)", icon: FaReact, color: "#61DAFB" }
     ]
   },
   {
-    category: "Web",
+    category: "Data Analysis",
     items: [
-      { name: "HTML5", icon: FaHtml5, color: "#E34F26" },
-      { name: "CSS3", icon: FaCss3Alt, color: "#1572B6" },
+      { name: "Excel", icon: FaFileExcel, color: "#217346" },
+      { name: "Pandas", icon: FaTable, color: "#150458" },
+      { name: "NumPy", icon: FaProjectDiagram, color: "#013243" },
+      { name: "Matplotlib", icon: FaChartBar, color: "#E17055" },
+      { name: "Power BI", icon: FaChartLine, color: "#F2C811" }
+    ]
+  },
+  {
+    category: "Web Technologies",
+    items: [
+      { name: "HTML", icon: FaHtml5, color: "#E34F26" },
+      { name: "CSS", icon: FaCss3Alt, color: "#1572B6" },
       { name: "REST APIs", icon: FaTerminal, color: "#4DB33D" }
     ]
   },
@@ -44,10 +54,17 @@ export const skills = [
     ]
   },
   {
-    category: "Database",
+    category: "Databases",
     items: [
       { name: "MySQL", icon: SiMysql, color: "#4479A1" },
       { name: "PostgreSQL", icon: SiPostgresql, color: "#336791" }
+    ]
+  },
+  {
+    category: "AI/ML",
+    items: [
+      { name: "Machine Learning", icon: FaBrain, color: "#F7931E" },
+      { name: "Data Analysis", icon: FaChartPie, color: "#00A8FF" }
     ]
   },
   {
@@ -63,7 +80,8 @@ export const skills = [
     items: [
       { name: "Antigravity", icon: FaBrain, color: "#6366F1" },
       { name: "Claude", icon: FaRobot, color: "#D97706" },
-      { name: "Cursor", icon: FaSearch, color: "#22D3EE" }
+      { name: "Cursor", icon: FaSearch, color: "#22D3EE" },
+      { name: "ChatGPT", icon: FaBrain, color: "#10A37F" }
     ]
   }
 ];
@@ -130,6 +148,21 @@ export const projects = [
     techStack: ["Django", "PostgreSQL", "JWT", "Antigravity AI"],
     github: "https://github.com/Moneesh2808/Hospital-Management.git",
     image: "/projects/hospital.jpg"
+  },
+  {
+    id: "retail-sales",
+    title: "Retail Sales Performance & Demand Forecasting Analytics",
+    description: "Developed a Retail Sales Performance and Demand Forecasting Analytics solution using Python and Power BI.",
+    longDescription: "Analyzed sales trends, customer behavior, and product performance. Applied data cleaning, exploratory data analysis, and predictive modeling techniques to forecast demand and support business decision-making through interactive dashboards and actionable insights.",
+    features: [
+      "Sales trend analysis",
+      "Customer behavior insights",
+      "Product performance tracking",
+      "Demand forecasting",
+      "Interactive Power BI dashboards"
+    ],
+    techStack: ["Python", "Power BI", "Data Analysis", "Predictive Modeling"],
+    image: "/projects/retail.jpg"
   }
 ];
 
@@ -210,6 +243,6 @@ export const certifications = [
 export const softSkills = [
   "Communication",
   "Team Collaboration",
-  "Quick Learner",
-  "Time Management"
+  "Problem Solving",
+  "Analytical Thinking"
 ];
