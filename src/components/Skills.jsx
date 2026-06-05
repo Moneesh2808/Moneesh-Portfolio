@@ -54,17 +54,17 @@ const Skills = () => {
                 {category.category}
               </h3>
               
-              <div className="flex flex-wrap gap-4">
+              <div className="grid grid-cols-2 gap-4">
                 {category.items.map((skill, sIdx) => {
                   const Icon = skill.icon;
                   return (
                     <motion.div
                       key={sIdx}
-                      whileHover={{ scale: 1.1, y: -5 }}
-                      className="flex flex-col items-center gap-2 p-3 rounded-xl bg-white dark:bg-slate-800 shadow-sm border border-slate-100 dark:border-slate-700 w-24 hover:shadow-indigo-500/20 transition-all"
+                      whileHover={{ scale: 1.05, y: -5 }}
+                      className="flex flex-col items-center justify-center gap-2 p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 shadow-sm border border-slate-100 dark:border-slate-700 hover:shadow-indigo-500/20 transition-all"
                     >
-                      <Icon size={28} style={{ color: skill.color }} />
-                      <span className="text-xs font-medium text-slate-600 dark:text-slate-400 text-center">{skill.name}</span>
+                      <Icon size={32} style={{ color: skill.color }} />
+                      <span className="text-[11px] font-bold text-slate-700 dark:text-slate-300 text-center">{skill.name}</span>
                     </motion.div>
                   );
                 })}
@@ -80,16 +80,20 @@ const Skills = () => {
           viewport={{ once: true }}
           className="max-w-4xl mx-auto"
         >
-          <h3 className="text-2xl font-bold mb-8 text-center">Soft Skills</h3>
-          <div className="flex flex-wrap justify-center gap-4 md:gap-6">
+          <div className="text-center mb-10">
+            <h3 className="text-3xl font-bold text-slate-900 dark:text-white">Core Strengths</h3>
+            <div className="w-20 h-1.5 bg-gradient-to-r from-indigo-600 to-cyan-500 mx-auto rounded-full mt-4" />
+          </div>
+          
+          <div className="flex flex-col sm:flex-row sm:flex-wrap justify-center items-center gap-4">
             {softSkills.map((skill, idx) => (
               <motion.div
                 key={idx}
-                whileHover={{ scale: 1.05 }}
-                className="flex items-center gap-3 px-6 py-4 glass-card rounded-2xl hover:border-indigo-500/30 transition-colors group"
+                whileHover={{ scale: 1.02 }}
+                className="flex items-center justify-center sm:justify-start px-6 py-4 glass-card rounded-2xl hover:border-indigo-500/30 transition-colors group w-full max-w-[280px]"
               >
-                <HiOutlineCheckCircle className="text-indigo-500 group-hover:text-cyan-500 transition-colors" size={24} />
-                <span className="font-medium text-slate-700 dark:text-slate-300">{skill}</span>
+                <HiOutlineCheckCircle className="hidden sm:block text-indigo-500 group-hover:text-cyan-500 transition-colors shrink-0 mr-3" size={24} />
+                <span className="text-center sm:text-left font-semibold text-slate-700 dark:text-slate-300 w-full sm:w-auto">{skill}</span>
               </motion.div>
             ))}
           </div>
