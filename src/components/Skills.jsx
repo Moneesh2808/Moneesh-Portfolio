@@ -90,10 +90,10 @@ const Skills = () => {
               <motion.div
                 key={idx}
                 whileHover={{ scale: 1.02 }}
-                className="flex items-center justify-center sm:justify-start px-6 py-4 glass-card rounded-2xl hover:border-indigo-500/30 transition-colors group w-full max-w-[280px]"
+                className="flex items-center justify-center sm:justify-start px-6 py-4 glass-card rounded-2xl hover:border-indigo-500/30 transition-colors group w-[260px]"
               >
                 <HiOutlineCheckCircle className="hidden sm:block text-indigo-500 group-hover:text-cyan-500 transition-colors shrink-0 mr-3" size={24} />
-                <span className="text-center sm:text-left font-semibold text-slate-700 dark:text-slate-300 w-full sm:w-auto">{skill}</span>
+                <span className="text-center sm:text-left font-semibold text-slate-700 dark:text-slate-300">{skill}</span>
               </motion.div>
             ))}
           </div>
