@@ -14,7 +14,7 @@ export const personalInfo = {
   phone: "+91 8124567215",
   location: "Kancheepuram, Tamil Nadu",
   github: "https://github.com/Moneesh2808",
-  linkedin: "#", // Add if available
+  linkedin: "https://www.linkedin.com/in/moneesh2808",
   resumeUrl: "/resume.pdf", // Placeholder
 };
 

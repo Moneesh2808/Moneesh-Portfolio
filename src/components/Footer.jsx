@@ -1,6 +1,6 @@
 import React from 'react';
 import { personalInfo } from '../data';
-import { FaGithub, FaHeart } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaHeart } from 'react-icons/fa';
 
 const Footer = () => {
   return (
@@ -20,9 +20,19 @@ const Footer = () => {
 
         <div className="flex items-center gap-4">
           <a 
+            href={personalInfo.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            title="LinkedIn Profile"
+            className="text-slate-500 hover:text-blue-600 transition-colors"
+          >
+            <FaLinkedin size={24} />
+          </a>
+          <a 
             href={personalInfo.github}
             target="_blank"
             rel="noopener noreferrer"
+            title="GitHub Profile"
             className="text-slate-500 hover:text-indigo-500 transition-colors"
           >
             <FaGithub size={24} />
